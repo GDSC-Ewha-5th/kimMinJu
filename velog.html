@@ -15,16 +15,19 @@
     <header>
       <div class="logo"><a href="#none">velog</a></div>
       <ul class="header-right">
+        <li class="issue">
+          <a href="./velog-issue.html"><i class="fa-solid fa-newspaper"></i></a>
+        </li>
         <li class="top-menu m1">
           <!-- 밝기설정 -->
           <!-- 디폴트 : light모드 ->나중에 반응형으로 -->
-          <a href="./velog_dark_mode.html"><i class="fa-solid fa-sun fa-xl"></i></a>
+          <a href="#" id="darkModeToggle" class="dark-mode-toggle"><i class="fa-solid fa-sun fa-xl"></i></a>
         </li>
         <li class="top-menu m2">
           <!-- 검색 -->
           <a href=""><i class="fa-solid fa-magnifying-glass fa-xl"></i></a></li>
         <li class="top-menu m3">
-          <button type="button" onclick="location.href='#' ">새 글 작성</button>
+          <button type="button" onclick="location.href='./write.html' ">새 글 작성</button>
         </li>
         <li class="top-menu m4"><a href=""><img src="https://www.studiopeople.kr/common/img/default_profile.png" alt=""></a></li>
         <li class="top-menu m5">
@@ -34,7 +37,7 @@
           </label>
           <div class="dropdown-content-top">
             <a href="#">내 벨로그</a>
-            <a href="#">새 글 작성</a>
+            <a href="./write.html" class="write">새 글 작성</a>
             <a href="#">임시 글</a>
             <a href="#">읽기 목록</a>
             <a href="#">설정</a>
@@ -85,7 +88,19 @@
         </ul>
 
       </div>
+
+      <!-- 메인- 본문(카드들) -->
       <section class="main-sec">
+        <!-- 모달 -->
+        <div id="modal" class="modal">
+          <div class="modal-content">
+            <div class="modal-content-inner">
+              <!-- Content from the clicked .content card will be displayed here -->
+            </div>
+            <span class="close-button">&times;</span>
+          </div>
+        </div>
+        <!-- 모달 끝 -->
         <div class="content">
           <a href="#none"><img src="https://velog.velcdn.com/images/backfox/post/63bd92fc-49f4-4b72-8700-d826f0c9a36c/image.png
             " alt=""></a>

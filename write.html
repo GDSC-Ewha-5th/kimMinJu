@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>velog</title>
+    <link rel="stylesheet" href="./write.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- 파비콘 -->
+    <link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAMAAABlApw1AAAAM1BMVEUgyZf////j+PI80KSP5Mud59Jz3b7x+/ir69guzJ6C4MTH8eVK06q57t5Y1rHV9exm2bcinjlYAAAFFklEQVR4nO2d65ajMAiA02i9tbV9/6ddraPNBZLoTAXO8v3ddQ4YIJBANZeQthteVW/4UY1DZyNxTSB9PVLLmeYe6mB88Tm++ZDGYgqIEH+mBhWwd2q5yqlsrEAn5fW/6R+hAjW1SHupfQXEyb9psCjwoJbmCN1HASvK/ld6uylQUctyjPuqgEAHWKgXBSy1HIfp27cCDbUcx6lnBeQuwHsJzKWjluI31JMCglKgmPFiJFvQRGtEW9C0HZuBWoTfMRjmJWSOlxGaRqwIF3/aCagFUBRFURRFURRFURRFURTlP6dqrjd7ubS3a+mBa9V0z/myur11r6+KViDK0LVOD09J50s/3Ny+JVus9p/Tj9eok+2Z06Cv2/AZS7IK1XCLJJm5ph8b4+Y9go4B6NVvJC9+auShM6+7euTVFyzBp9tqn9p/yFjfUBl+aHH5n/hTt1OkvyZf/QoaVBLyn7MEJdJPYDHlmnzqjFvrQgUQh+y75FO45Z2uAPouGzx0TZxw61iowBP9A1UqApzQelKoQMoYsH3gcooXFyqQ7CR8oYHshPaxUgWSolSYI5ywAnUELEo6HcI0IOk9gbemTDcwogFJ/xgc2nOtYHfQD0iaNwbYGnKyQKZ3xkYW84IVyFlDDyzBKdlcRAUrkI2IQFpE1AUNR/VMVTb3TEYQNcDBuUHWHICVI2rAglPkvEPu1/lLNKAC+bGE6AmqHtA7rED2nGS/yl+ihxXIvs/wATwF/zZwWpCrDyO96bqI4YOS3AuNwihdF+uxMBTu4FQxyBwNQ2EyRHhEfSyZCPY/0kmGQ8lE8BDpMNKRmibwYUvaiH6kpgnKCNpRkiM1TbBqtJMAB2qawPGJZ3mQZCLll8GiUY9i7A9DfvpBPpAKJxOJvdWPQbQhaGZ3MuHHLfphsL3JhO/CDMYJ99Y0/gIwmAjeWdNUntPTFTIO+2oaPxEl9+AZOJnA3q2nLo95VDiZQMKQ5/L0IfQNkkzAwnkLwMCDZ/bUNN4C8DAgsyeZ8O42Wh4GZPbUNF4IIk+CNoprGm8PYLAHrxTXNJ6mbAwIPO2fiWoaz9v5GFB5TeMepjAyIIMlE2EY8kIoIwMyhTWNF0I5GZAprGnc/0R4FgpSUtO4ZQOTHOhDQU3TuwbEJAdygBVwaxrXgNjkQB+yNY2bsbIzIJOvabwIxPE3XXI1jRtnmUXQhUxN4yahvLbglXRN4/4rnyLAB65pFmthHkEX4KaPpaZxPZxhBF2Ak4m3vbsOzve3KfGaxnMPpg5g0GTi7jsAywi6gNY0IhxgBqlpPAfga0AGbfqQ4QAz6fEM5g4wg9Q0QhzAoMmEEAeYyQw4sZc/PWPF4C4yS3JGKdvKywAkmVgcgG0K5IDUNDNcawCfRBjiWgMEoGGI+Q62gQ25sbjLLgFJJvjvYCtIMiHnx63hmkaKAxikpuGewnkANY2IHWwjrmlk7GAb2wGitbdHd62bRpb85j6JPFbChFYURVEURVEURVEURVEUZS+iTo4hhJ9iVob6J6t/ySj/w5qirn9iOkPz23p/hjUs++CLuV+MpCvQmG5SoJW8E9j5I+OCl6B5fyVd8BLYtwJyl2C+0jWyWjE83t1VRl4vwMrSEm/kdWOsLE0NRlw/zMpPT8M6PyhOg7UnYxuAfIjyg89XAD4TnHLa2qYU6NOV5I6gSjGj3p0J9GZorYTm1OAbPMEQsO2Yb2pj+AmheIrZdsPI0R366uV/8WnhH82FHo8XmKEAAAAAAElFTkSuQmCC">
+    <!-- <script src="./write.js"></script> -->
+</head>
+<body>
+    <script src="https://unpkg.com/@yaireo/tagify"></script>
+    <link href="https://unpkg.com/@yaireo/tagify/dist/tagify.css" rel="stylesheet" type="text/css" />
+    <h1>태그 입력</h1>
+    <input placeholder="type tags">
+    
+    <script>
+    var input = document.querySelector('input')
+    var tagify = new Tagify(input);
+      
+    // 태그가 추가되면 이벤트 발생
+    tagify.on('add', function() {
+      console.log(tagify.value); // 입력된 태그 정보 객체
+    })
+    </script>
+</body>
+</html>
