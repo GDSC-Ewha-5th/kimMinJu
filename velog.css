@@ -4,6 +4,17 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap');
 
+:root[data-theme='dark'] {
+  --background-color: rgb(68 64 60);
+  --card-color: rgb(28 25 23);
+  --text-color: rgb(245 245 244);
+}
+
+:root[data-theme='light'] {
+  --background-color: rgb(255 237 213);
+  --card-color: #fff;
+  --text-color: rgb(68 64 60);
+}
 /* 기본설정 */
 *{
   margin: 0;
@@ -13,7 +24,10 @@
 }
 body{
   margin: 0px 26px;
-  background-color: rgba(243, 246, 248, 0.384);
+  /* background-color: rgba(243, 246, 248, 0.384); */
+  background-color: var(--background-color);
+  transition: 0.2s;
+
 }
 ol,ul,li{
   list-style: none;
@@ -59,6 +73,26 @@ header{
 }
 .top-menu{
   float: left;
+}
+.issue{
+  width: 35px;
+  height: 35px;
+  margin-right: 4px;
+  padding: 1px 6px;
+  background-color: transparent;
+  border-radius: 50%;
+  transition-duration: 0.3s;
+  font-size: 20px;
+}
+.issue a{
+  cursor: pointer;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+}
+.issue:hover{
+  background-color: lightgray;
 }
 .m1{
   width: 35px;
@@ -133,6 +167,8 @@ header{
   position: relative;
   transition-duration: 0.3s;
 }
+
+/* top메뉴 드롭다운(내 벨로그, 새 글 작성 등) -> 프로필 우측 */
 #check:checked~.dropdown-content-top
 {
   display: block;
@@ -146,7 +182,6 @@ header{
   cursor: pointer;
 }
 
-/* top메뉴 드롭다운(내 벨로그, 새 글 작성 등) -> 프로필 우측 */
 .dropdown-content-top{
   display: none;
   transition: 0.3s;
@@ -157,6 +192,7 @@ header{
   z-index: 1;
   top: 150%;
   right: 0px;
+  animation: fade-in 0.5s ease;
 }
 .dropdown-content-top a{
   color: #000;
@@ -167,6 +203,14 @@ header{
 .dropdown-content-top a:hover{
   background-color: rgba(255, 255, 255, 0.74);
   color: rgb(40, 151, 108);
+}
+@keyframes fade-in{
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
 }
 
 /* 아래 부분 전체 메인 컨테이너 */
@@ -365,6 +409,69 @@ header{
   margin-top: 32px;
   transition-duration: 0.3s;
 }
+/* 모달 */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); 
+  z-index: 1;
+}
+
+.modal-content {
+  background-color: transparent;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+}
+
+/* Close button style */
+.close-button {
+  position: absolute;
+  top: 100%;
+  right: 50%;
+  font-size: 30px;
+  cursor: pointer;
+  background: gray;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+  transform: translateX(50%);
+}
+
+/* Style for the content inside the modal */
+.modal-content-inner {
+  /* Customize as needed */
+  pointer-events: none;
+}
+.modal-content-inner:hover{
+
+}
+
+/* Add more CSS for .content to make it look as expected */
+.content {
+  /* Your existing CSS for .content here */
+  background-color: rgb(255, 255, 255);
+    /* border: 1px solid gray; */
+  border-radius: 5px;
+  overflow: hidden;
+  -webkit-box-shadow: 0px 6px 47px 7px rgba(66, 68, 90, 0.12);
+  -moz-box-shadow: 0px 6px 47px 7px rgba(66, 68, 90, 0.12);
+  box-shadow: 0px 6px 47px 7px rgba(66, 68, 90, 0.12);
+  width: 320px;
+  height: 380px;
+  margin: 16px;
+  transition-duration: 0.3s;
+}
+
+/* 모달 끝 */
 .content{
   background-color: rgb(255, 255, 255);
   /* border: 1px solid gray; */
@@ -476,4 +583,9 @@ header{
 .likes p{
   margin-left: 8px;
   font-size: 0.7rem;
+}
+/* 다크 모드 활성화시 */
+.dark-mode{
+  background-color: #111;
+  color: #fff;
 }
